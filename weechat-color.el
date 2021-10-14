@@ -79,7 +79,7 @@ This will look very bland!"
          (astd `(seq ,attr (= 2 digit)))
          (ext  `(seq "@" (= 5 digit)))
          (aext `(seq "@" ,attr (= 5 digit))))
-    (rx-form
+    (rx--translate-form
      `(or (seq ""
                (or ,std
                    ,ext
@@ -92,7 +92,7 @@ This will look very bland!"
                                 (seq (or ,std ,astd ,ext ,aext)
                                      ","
                                      (or ,std ,astd ,ext ,aext))))
-                   (seq "b" (in "FDB_-#il"))
+                   (seq "b" (in "-FDB_#il"))
                    ""))
           (seq "" ,attr)
           (seq "" ,attr)
